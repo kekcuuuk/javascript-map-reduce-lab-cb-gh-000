@@ -9001,8 +9001,8 @@ const issues = [
   }
 ];
 
-let issuesWithUpdatedApiUrl = issues.map(issue => {
-	return Object.assign({}, issue, {
+let issuesWithUpdatedApiUrl = issues.map(issue => 
+	Object.assign({}, issue, {
 		url: issue.url.replace(/api\.github\.com/, 'api-v2.github.com')
 	});
-});
+);
