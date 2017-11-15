@@ -9033,4 +9033,4 @@ let inner = nonAutomaticIssues.map(issue =>
 	</tr>`
 );
 
-document.getElementById('results').innerHTML(inner.join());
+document.getElementById('results').innerHTML(inner.join(''));
