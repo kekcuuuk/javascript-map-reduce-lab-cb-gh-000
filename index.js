@@ -9013,7 +9013,7 @@ let openIssues = issues.reduce(function (open, issue) {
 	if (issue.state === 'open') {
 		open.push(issue);
 	}
-	
+
 	return open;
 }, []);
 
@@ -9021,19 +9021,16 @@ let nonAutomaticIssues = issues.reduce(function (open, issue) {
 	if (!/automatically created/.test(issue.body)) {
 		open.push(issue);
 	}
-	
+
 	return open;
 }, []);
 
-let inner = nonAutomaticIssues.map(issue => 
+let inner = nonAutomaticIssues.map(issue =>
 	`<tr>
 	  <th>${issue.body}</th>
 	  <th>${issue.created_at}</th>
 	  <th>${issue.state}</th>
-	</tr>`;
+	</tr>`
 );
 
 document.getElementById('results').innerHTML(inner.join());
-
-
-
