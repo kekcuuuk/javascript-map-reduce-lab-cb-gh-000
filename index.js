@@ -9008,3 +9008,32 @@ let issuesWithUpdatedApiUrl = issues.map(issue =>
 );
 
 let commentCountAcrossIssues = (issues.map(issue => issue['comments_count'])).reduce((sum, value) => sum + value);
+
+let openIssues = issues.reduce(function (open, issue) {
+	if (issue.state === 'open') {
+		open.push(issue);
+	}
+	
+	return open;
+}, []);
+
+let nonAutomaticIssues = issues.reduce(function (open, issue) {
+	if (!/automatically created/.test(issue.body)) {
+		open.push(issue);
+	}
+	
+	return open;
+}, []);
+
+let inner = nonAutomaticIssues.map(issue => 
+	`<tr>
+	  <th>${issue.body}</th>
+	  <th>${issue.created_at}</th>
+	  <th>${issue.state}</th>
+	</tr>`;
+);
+
+document.getElementById('results').innerHTML(inner.join());
+
+
+
