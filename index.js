@@ -9027,9 +9027,9 @@ let nonAutomaticIssues = issues.reduce(function (open, issue) {
 
 let inner = nonAutomaticIssues.map(issue =>
 	`<tr>
-	  <th>${issue.body}</th>
-	  <th>${issue.created_at}</th>
-	  <th>${issue.state}</th>
+	  <td>${issue.body}</td>
+	  <td>${issue.created_at}</td>
+	  <td>${issue.state}</td>
 	</tr>`
 );
 
