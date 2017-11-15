@@ -9033,4 +9033,10 @@ let inner = nonAutomaticIssues.map(issue =>
 	</tr>`
 );
 
-document.getElementById('results').innerHTML(inner.join(''));
+document.getElementById('results').innerHTML = nonAutomaticIssues.map(issue =>
+	`<tr>
+	  <td>${issue.body}</td>
+	  <td>${issue.created_at}</td>
+	  <td>${issue.state}</td>
+	</tr>`
+).join('');
